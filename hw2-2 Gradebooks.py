@@ -1,24 +1,19 @@
-hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
-prices = [30, 25, 40, 20, 20, 35, 50, 35]
-last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+subjects = ["physics", "calculus", "poetry", "history"]
+grades = [98, 97, 85, 88]
+gradebook = []
+for i in range(len(subjects)):
+    tmp = []
+    tmp.append(subjects[i])
+    tmp.append(grades[i])
+    gradebook.append(tmp)
+    
+gradebook.append(["computer science", 100])
+gradebook.append(["visual arts", 93])
 
-total_price = 0
-for i in prices:
-    total_price += i
+gradebook[5][1] = 98
+gradebook[2].remove(85)
+gradebook[2].append('Pass')
 
-average_price = total_price/len(prices)
-print(f'Average price is {average_price}')
-
-new_prices = [i-5 for i in prices]
-print(new_prices)
-
-total_revenue = 0
-for i in range(len(hairstyles)):
-    total_revenue += prices[i] * last_week[i]
-
-print(total_revenue)
-average_daily_revenue = total_revenue / 7
-print(f'Average daily revenue is {average_daily_revenue}')
-
-cuts_under_30 = [hairstyles[i] for i in range(len(hairstyles)) if new_prices[i] < 30]
-print(cuts_under_30)
+last_semester_gradebook =[["politics", 80], ["latin", 96], ["dance", 97], ["architecture", 65]]
+full_gradebook = last_semester_gradebook + gradebook
+print(full_gradebook)
